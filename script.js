@@ -1,59 +1,68 @@
+
 /* ==========================================================
    ✏️  PERSONNALISE TOUT ICI (tu n'as pas besoin de toucher au reste)
    ========================================================== */
 const CONFIG = {
-  // Date de l'anniversaire (année-mois-jourTheure) — ex: "2026-12-31T00:00:00"
-  targetDate: "2026-12-31T00:00:00",
-
+  // Date de l'anniversaire (année-mois-jourTheure)
+  targetDate: "2026-11-14T00:00:00",
+ 
   // Fichiers (mets-les dans le dossier "media/") — laisse "" pour désactiver
   music: "media/music.mp3",
-  video: "media/video.mp4",
+  video: "media/FF.mp4",
   videoPoster: "",
-
-  // La lettre : chaque ligne = un paragraphe (écrit lettre par lettre)
+ 
+  // La lettre : chaque ligne = un paragraphe (écrit lettre par lettaque ligne = un paragraphe (écrit lettre par lettre)
   letter: [
-    "JOYEUX ANNIVERSAIRE MON AMOUR ♡",
-    "Aujourd'hui est un jour très spécial, car c'est le jour où la personne la plus précieuse de ma vie est née.",
-    "Merci d'être toujours là, d'avoir rendu mes journées plus belles et d'avoir transformé de simples moments en souvenirs inoubliables.",
-    "Que cette nouvelle année t'apporte autant de bonheur que tu m'en donnes.",
-    "Je t'aime, aujourd'hui et toujours. ♡"
+    "🎂 JOYEUX ANNIVERSAIRE FIRDAWS ♡ 🎂",
+    "Un mercredi 11 novembre 2009, à Trappes, naissait une petite fille qui allait, sans le savoir, devenir une personne très spéciale dans ma vie : Firdaws Oualdali. ❤️",
+    "Aujourd'hui, tu grandis encore d'une année, et même si j'ai parfois du mal à croire que tu deviens aussi grande, une chose n'a pas changé : tu sais toujours aussi bien me taper sur les nerfs ! 😂 Franchement, je pense que personne au monde n'a autant de talent que toi pour me donner des maux de tête. Entre tes réactions, tes paroles, ton caractère et tes petites habitudes, tu arrives toujours à trouver un moyen de me faire perdre patience. Et le pire, c'est que tu le fais probablement avec le sourire. 😭😂",
+    "Mais bon, après tout, c'est aussi ça qui fait que tu es toi. Tu as ton caractère, ta façon de voir les choses, ta manière de parler et cette personnalité qu'on ne peut pas confondre avec celle de quelqu'un d'autre. Même si parfois tu es insupportable (et je pèse mes mots 😭), je ne voudrais pas que tu sois différente.",
+    "Je veux surtout que tu saches que tu occupes une place très particulière dans ma vie. Tu n'es pas simplement ma cousine, tu es bien plus que ça. Tu es cette personne avec qui je peux rigoler pour rien, me chamailler pour des bêtises, partager des moments inoubliables et créer des souvenirs qu'on gardera longtemps. Tu es ma meilleure cousine, et même si je ne te le dis pas tous les jours, je tiens énormément à toi.",
+    "On ne se le dit peut-être pas souvent, mais la famille, c'est précieux. Et parmi toutes les personnes qu'on rencontre dans notre vie, certaines ont une place qu'on ne peut remplacer. Toi, tu fais partie de ces personnes. Peu importe le temps qui passe, les kilomètres ou les années qui nous séparent, tu resteras toujours ma petite cousine que je dois supporter, protéger, embêter et surtout voir heureuse. ❤️",
+    "Pour cette nouvelle année de ta vie, je te souhaite sincèrement tout le bonheur du monde. Je te souhaite de réussir dans tout ce que tu entreprends, de réaliser tes rêves, de rencontrer de belles personnes et de toujours garder cette lumière qui fait de toi une personne unique. J'espère que la vie t'offrira mille raisons de sourire, que tu ne manqueras jamais d'amour, de santé et de réussite, et que tous tes souhaits finiront par se réaliser.",
+    "N'oublie jamais ta valeur. Ne laisse personne te faire croire que tu n'es pas capable de réussir ou que tu ne mérites pas le meilleur. Crois en toi, avance à ton rythme, profite de ta jeunesse et surtout, ne perds jamais cette personnalité qui te rend si spéciale.",
+    "Et surtout, continue de profiter de la vie, de rire, de faire des bêtises et de m'embêter… même si, honnêtement, j'aurais préféré que tu développes un peu plus de sagesse cette année. Mais bon, je ne vais pas trop en demander, chaque chose en son temps. 😂",
+    "Enfin, je veux terminer par une chose toute simple : merci d'être toi, merci pour tous ces moments, tous ces fous rires et même pour tous ces fameux « sda3 » que tu m'as donnés. Parce qu'au fond, ce sont aussi ces petites chamailleries qui rendent notre relation aussi spéciale.",
+    "Joyeux anniversaire, Firdaws. Profite pleinement de tes 17 ans, ma cousine préférée (ne prends pas trop la confiance non plus 😭).",
+    "Je te souhaite le meilleur aujourd'hui, demain et pour toutes les années à venir.",
+    "Je t'aime fort, petite cousine. Prends soin de toi et ne change jamais… enfin, essaie au moins de diminuer les maux de tête que tu me donnes. 😂❤️",
+    "♡ FIRDAWS OUALDALI ♡"
   ],
-
-  // Les photos (4 à 9 recommandées) : remplace par "photos/1.jpg", "photos/2.jpg"...
-  // Si une entrée a  video: "media/clipX.mp4"  → le cadre joue la vidéo (muette, en boucle), et avec le son quand on clique dessus.
-  // "src" sert alors d'image de secours tant que la vidéo n'est pas là (ou si elle ne charge pas).
+ 
+  // Les photos (4 à 9 recommandées) : "photos/1.jpg", "photos/2.jpg"...
+  // Pour une vidéo dans un cadre : { src: "photos/5.jpg", video: "media/clip1.mp4", caption: "..." }
+  // Pour un extrait de chanson au clic : audio: "media/song.mp3", audioStart: 45, audioEnd: 75
   photos: [
-    { src: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=600&q=80", caption: "Notre premier sourire" },
-    { src: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=600&q=80", video: "media/clip1.mp4", caption: "Une journée magique" },
-    { src: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=600&q=80", caption: "Juste nous deux" },
-    { src: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=600&q=80", video: "media/clip2.mp4", caption: "À jamais gravé" },
-    { src: "https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=600&q=80", video: "media/clip3.mp4", caption: "Nos rires" },
-    { src: "https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=600&q=80", caption: "Moments tendres" },
-    { src: "https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=600&q=80", video: "media/clip4.mp4", caption: "Ensemble" },
-    { src: "https://images.unsplash.com/photo-1474552226712-ac0f0961a954?auto=format&fit=crop&w=600&q=80", caption: "Toi & moi" }
+    { src: "photos/F.jpg", caption: "PAPAPAPAPAPAPA" },
+    { src: "media/clip1.mp4", video: "media/clip1.mp4", caption: "Avec ma cousine" },
+    { src: "photos/F2.jpg", caption: "avec ma cousine" },
+    { src: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=600&q=80", video: "media/clip2.mp4", audio: "media/song2.mp3", audioStart: 165, audioEnd: 225, caption: "mode de solitude" },
+    { src: "https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=600&q=80", video: "media/clip3.mp4", audio: "media/song.mp3", audioStart: 215, audioEnd: 235, caption: "Ta magie… tu es belle" },
+    { src: "photos/F3.jpg", caption: "Elle a un front tellement grand qu’on pourrait y faire un match !" },
+    { src: "https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=600&q=80", video: "media/clip4.mp4", caption: "Pchakhhhhhhh" },
+    { src: "photos/F4.jpg", caption: "Toi" }
   ],
-
+ 
   // Scène "vœux"
-  wishesTitle: "Joyeux anniversaire, mon cœur ♡",
+  wishesTitle: "Joyeux anniversaire, Firdews ♡",
   wishes: [
     "Je te souhaite du bonheur, de la santé, du succès et de belles bénédictions pour ce nouveau chapitre de ta vie.",
     "Que tous tes rêves deviennent réalité, et que ton cœur soit toujours rempli de joie.",
-    "Merci d'être dans ma vie. Reste heureuse, reste en bonne santé, et continue de sourire. Je t'aime, toujours."
+    "Merci d'être dans ma vie. Reste heureuse, reste en bonne santé, et continue de sourire."
   ],
-
   // Scène finale : mots qui s'écrivent et s'effacent
   finalWords: ["Avec tout mon amour", "Toujours & à jamais"],
   finalLine: "Merci d'être une partie de ma vie. J'espère que ce petit cadeau rendra ton jour encore plus beau.",
   finalSign: "Pour toujours à toi ♡"
 };
 /* ========================================================== */
-
+ 
 document.addEventListener("DOMContentLoaded", () => {
   const $ = id => document.getElementById(id);
   const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const sleep = ms => new Promise(r => setTimeout(r, ms));
   let runId = 0; // annule les animations d'écriture quand on change de scène
-
+ 
   /* ---------- Pétales & étincelles ---------- */
   const petals = $("petals");
   if (!reduced) {
@@ -66,8 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
       petals.appendChild(p);
     }
   }
-
-
+ 
   /* ---------- Ballons ---------- */
   const balloons = $("balloons");
   if (!reduced) {
@@ -79,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
       balloons.appendChild(b);
     }
   }
-
+ 
   /* ---------- Effets (confettis, feux d'artifice, coeurs, étincelles) ---------- */
   const fx = $("fx"), ctx = fx.getContext("2d");
   let W = 0, H = 0, raf = 0;
@@ -97,14 +105,14 @@ document.addEventListener("DOMContentLoaded", () => {
     ctx.clearRect(0, 0, W, H);
     for (let i = parts.length - 1; i >= 0; i--) {
       const q = parts[i];
-      q.update(q); 
+      q.update(q);
       if (q.life <= 0) { parts.splice(i, 1); continue; }
       ctx.save(); q.draw(q); ctx.restore();
     }
     raf = parts.length ? requestAnimationFrame(loop) : 0;
   }
   function add(q) { if (reduced) return; parts.push(q); if (!raf) raf = requestAnimationFrame(loop); }
-
+ 
   function confetti(x, y, n = 130) {
     for (let i = 0; i < n; i++) {
       const a = rnd(0, Math.PI * 2), sp = rnd(4, 13);
@@ -163,7 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
   addEventListener("pointerdown", e => { if (!e.target.closest(".next,#cake,.memory")) sparkle(e.clientX, e.clientY, 8, 1.4); });
   const centerOf = el => { const r = el.getBoundingClientRect(); return [r.left + r.width / 2, r.top + r.height / 2]; };
   let ambientId = 0; // boucle d'ambiance (coeurs / feux d'artifice) annulée au changement de scène
-
+ 
   /* ---------- Musique ---------- */
   const music = $("music"), toggle = $("music-toggle");
   let musicOn = false, musicWanted = true;
@@ -183,7 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
   toggle.addEventListener("click", () => {
     if (musicOn) { musicWanted = false; pauseMusic(); } else { musicWanted = true; playMusic(); }
   });
-
+ 
   /* ---------- Navigation ---------- */
   function goTo(n) {
     const cur = document.querySelector(".scene.active");
@@ -195,7 +203,7 @@ document.addEventListener("DOMContentLoaded", () => {
     next.classList.add("active");
     next.scrollTop = 0;
     if (n === "5" || n === 5) { /* vidéo : rien */ } else { stopVideo(); }
-    if (String(n) !== "4") { pauseClips(); gallery.querySelectorAll("video.clip").forEach(c => { if (c._resumeMusic) { c._resumeMusic = false; playMusic(); } }); }
+    if (String(n) !== "4") { pauseClips(); stopSeg(); resumeBg(); }
     ({ 3: runLetter, 4: runGallery, 6: runWishes, 7: runFinal }[n] || (() => {}))();
   }
   document.querySelectorAll(".next").forEach(b => b.addEventListener("click", async () => {
@@ -217,17 +225,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     goTo(b.dataset.next);
   }));
-
+ 
   /* ---------- Machine à écrire ---------- */
   async function typeInto(el, text, speed, id) {
     for (const ch of text) {
       if (id !== runId) return false;
       el.textContent += ch;
+      if (el.parentNode && el.parentNode.id === "letter") el.parentNode.scrollTop = el.parentNode.scrollHeight;
       await sleep(reduced ? 0 : speed);
     }
     return true;
   }
-
+ 
   /* ---------- Compte à rebours ---------- */
   const target = new Date(CONFIG.targetDate).getTime();
   const pad = v => String(v).padStart(2, "0");
@@ -244,7 +253,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   tick(); setInterval(tick, 1000);
-
+ 
   /* ---------- Lettre ---------- */
   async function runLetter() {
     const id = runId, box = $("letter"), btn = $("letter-next");
@@ -259,45 +268,74 @@ document.addEventListener("DOMContentLoaded", () => {
       const p = document.createElement("p");
       if (i === 0) p.className = "first";
       box.appendChild(p);
-      const ok = await typeInto(p, CONFIG.letter[i], 28, id);
+      const ok = await typeInto(p, CONFIG.letter[i], 16, id);
       if (!ok) return;
       box.scrollTop = box.scrollHeight;
       await sleep(reduced ? 0 : 350);
     }
     if (id === runId) { btn.classList.add("show"); hearts(W / 2, H * .75, 12, W * .25); }
   }
-
+ 
   /* ---------- Galerie ---------- */
   const gallery = $("gallery");
   gallery.innerHTML = CONFIG.photos.map((p, i) => {
     const rot = (Math.random() * 14 - 7).toFixed(1);
     const dy = Math.round(Math.random() * 30 - 15);
-    const vid = p.video ? `<video class="clip" src="${p.video}" muted loop playsinline preload="metadata"${p.src ? ` poster="${p.src}"` : ""}></video><span class="clip-badge" aria-hidden="true">▶</span>` : "";
-    return `<figure class="polaroid memory${p.video ? " has-video" : ""}" style="--r:${rot}deg;--dy:${dy}px;--i:${i}">
-      <div class="frame"><img src="${p.src || ""}" alt="${p.caption || ""}" loading="lazy">${vid}</div><figcaption>${p.caption || ""}</figcaption></figure>`;
+    const isImg = p.src && !/\.(mp4|webm|mov|m4v)(\?|$)/i.test(p.src);   // une vidéo n'est pas une image de secours
+    const imgSrc = isImg ? p.src : "data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=";
+    const vid = p.video ? `<video class="clip" src="${p.video}" muted loop playsinline preload="metadata"${isImg ? ` poster="${p.src}"` : ""}></video><span class="clip-badge" aria-hidden="true">▶</span>` : "";
+    return `<figure class="polaroid memory${p.video ? " has-video" : ""}" data-i="${i}" style="--r:${rot}deg;--dy:${dy}px;--i:${i}">
+      <div class="frame"><img src="${imgSrc}" alt="${isImg ? (p.caption || "") : ""}" loading="lazy">${vid}</div><figcaption>${p.caption || ""}</figcaption></figure>`;
   }).join("");
   // vidéo qui ne charge pas → on garde l'image de secours
   gallery.querySelectorAll("video.clip").forEach(v => v.addEventListener("error", () => { v.remove(); const b = v.parentNode && v.parentNode.querySelector(".clip-badge"); if (b) b.remove(); }));
   const clips = () => [...gallery.querySelectorAll("video.clip")];
   const playClips = () => clips().forEach(v => { v.muted = true; v.play().catch(() => {}); });
   const pauseClips = () => clips().forEach(v => { v.pause(); v.muted = true; });
+  /* extraits de chansons (audio / audioStart / audioEnd) */
+  const segs = {};
+  CONFIG.photos.forEach((p, i) => {
+    if (!p.audio) return;
+    const a = new Audio(p.audio); a.preload = "auto";
+    a.addEventListener("error", () => { delete segs[i]; });   // fichier absent → la vidéo garde son propre son
+    a.addEventListener("timeupdate", () => { const end = p.audioEnd || a.duration; if (end && a.currentTime >= end) a.currentTime = p.audioStart || 0; });
+    segs[i] = a;
+  });
+  let activeSeg = null, gMusicPaused = false;
+  const resumeBg = () => { if (gMusicPaused) { gMusicPaused = false; playMusic(); } };
+  function fade(a, to, ms, done) {
+    clearInterval(a._f); const from = a.volume, steps = 12; let k = 0;
+    a._f = setInterval(() => { k++; a.volume = Math.max(0, Math.min(1, from + (to - from) * k / steps)); if (k >= steps) { clearInterval(a._f); if (done) done(); } }, ms / steps);
+  }
+  function startSeg(i) {
+    const a = segs[i]; activeSeg = a;
+    a.currentTime = CONFIG.photos[i].audioStart || 0; a.volume = 0;
+    a.play().then(() => fade(a, 1, 900)).catch(() => {});
+  }
+  function stopSeg() {
+    if (!activeSeg) return;
+    const a = activeSeg; activeSeg = null;
+    fade(a, 0, 500, () => a.pause());
+  }
   gallery.querySelectorAll(".memory").forEach(f => f.addEventListener("click", () => {
     sparkle(...centerOf(f), 14, 1.6);
     const was = f.classList.contains("zoom");
     gallery.querySelectorAll(".zoom").forEach(z => { z.classList.remove("zoom"); const c = z.querySelector("video.clip"); if (c) c.muted = true; });
-    const clip = f.querySelector("video.clip");
-    if (!was) {
-      f.classList.add("zoom");
-      if (clip) { clip.muted = false; clip.currentTime = 0; clip.play().catch(() => { clip.muted = true; clip.play().catch(() => {}); }); if (musicOn) { pauseMusic(); musicWanted = true; clip._resumeMusic = true; } }
-    }
-    if (!(!was && clip)) clips().forEach(c => { if (c._resumeMusic) { c._resumeMusic = false; playMusic(); } });
+    stopSeg();
+    if (was) { resumeBg(); return; }
+    f.classList.add("zoom");
+    const i = +f.dataset.i, clip = f.querySelector("video.clip"), seg = segs[i];
+    if (!clip && !seg) { resumeBg(); return; }
+    if (musicOn) { pauseMusic(); musicWanted = true; gMusicPaused = true; }
+    if (clip) { clip.currentTime = 0; clip.muted = !!seg; clip.play().catch(() => { clip.muted = true; clip.play().catch(() => {}); }); }
+    if (seg) startSeg(i);
   }));
   function runGallery() {
     playClips();
     setTimeout(() => hearts(W / 2, H * .85, 10, W * .3), 600);
     gallery.querySelectorAll(".memory").forEach(f => { f.classList.remove("in", "zoom"); void f.offsetWidth; f.classList.add("in"); });
   }
-
+ 
   /* ---------- Lecteur vidéo ---------- */
   const v = $("video"), player = $("player");
   const fmt = s => isFinite(s) ? Math.floor(s / 60) + ":" + pad(Math.floor(s % 60)) : "0:00";
@@ -330,7 +368,7 @@ document.addEventListener("DOMContentLoaded", () => {
   $("big-play").addEventListener("click", togglePlay);
   v.addEventListener("click", togglePlay);
   $("mute").addEventListener("click", () => { v.muted = !v.muted; $("mute").textContent = v.muted ? "🔇" : "🔊"; });
-
+ 
   /* ---------- Vœux ---------- */
   async function runWishes() {
     const id = runId, box = $("wishes"), amb = ambientId;
@@ -345,7 +383,7 @@ document.addEventListener("DOMContentLoaded", () => {
       await sleep(reduced ? 0 : 200);
     }
   }
-
+ 
   /* ---------- Final ---------- */
   async function runFinal() {
     const id = runId, w = $("final-words"), amb = ambientId, cake = $("cake");
@@ -368,7 +406,7 @@ document.addEventListener("DOMContentLoaded", () => {
       await sleep(300); i++;
     }
   }
-
+ 
   /* ---------- Gâteau : souffler les bougies ---------- */
   function blowCandles() {
     const cake = $("cake");
@@ -382,7 +420,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   $("cake").addEventListener("click", blowCandles);
   $("cake").addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); blowCandles(); } });
-
+ 
   /* ---------- Rejouer ---------- */
   $("restart").addEventListener("click", () => {
     runId++; ambientId++;
