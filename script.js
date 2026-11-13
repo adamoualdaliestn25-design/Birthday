@@ -1,17 +1,16 @@
-
 /* ==========================================================
    ✏️  PERSONNALISE TOUT ICI (tu n'as pas besoin de toucher au reste)
    ========================================================== */
 const CONFIG = {
   // Date de l'anniversaire (année-mois-jourTheure)
   targetDate: "2026-11-14T00:00:00",
- 
-  // Fichiers (mets-les dans le dossier "media/") — laisse "" pour désactiver
-  music: "media/music.mp3",
-  video: "media/FF.mp4",
+
+  // Fichiers (à la racine du repo, à côté de index.html) — laisse "" pour désactiver
+  music: "music.mp3",
+  video: "FF.mp4",
   videoPoster: "",
- 
-  // La lettre : chaque ligne = un paragraphe (écrit lettre par lettaque ligne = un paragraphe (écrit lettre par lettre)
+
+  // La lettre : chaque ligne = un paragraphe (écrit lettre par lettre)
   letter: [
     "🎂 JOYEUX ANNIVERSAIRE FIRDAWS ♡ 🎂",
     "Un mercredi 11 novembre 2009, à Trappes, naissait une petite fille qui allait, sans le savoir, devenir une personne très spéciale dans ma vie : Firdaws Oualdali. ❤️",
@@ -28,41 +27,40 @@ const CONFIG = {
     "Je t'aime fort, petite cousine. Prends soin de toi et ne change jamais… enfin, essaie au moins de diminuer les maux de tête que tu me donnes. 😂❤️",
     "♡ FIRDAWS OUALDALI ♡"
   ],
- 
-  // Les photos (4 à 9 recommandées) : "photos/1.jpg", "photos/2.jpg"...
-  // Pour une vidéo dans un cadre : { src: "photos/5.jpg", video: "media/clip1.mp4", caption: "..." }
-  // Pour un extrait de chanson au clic : audio: "media/song.mp3", audioStart: 45, audioEnd: 75
+
+  // Les photos / vidéos (à la racine du repo)
   photos: [
-    { src: "photos/F.jpg", caption: "PAPAPAPAPAPAPA" },
-    { src: "media/clip1.mp4", video: "media/clip1.mp4", caption: "Avec ma cousine" },
-    { src: "photos/F2.jpg", caption: "avec ma cousine" },
-    { src: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=600&q=80", video: "media/clip2.mp4", audio: "media/song2.mp3", audioStart: 165, audioEnd: 225, caption: "mode de solitude" },
-    { src: "https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=600&q=80", video: "media/clip3.mp4", audio: "media/song.mp3", audioStart: 215, audioEnd: 235, caption: "Ta magie… tu es belle" },
-    { src: "photos/F3.jpg", caption: "Elle a un front tellement grand qu’on pourrait y faire un match !" },
-    { src: "https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=600&q=80", video: "media/clip4.mp4", caption: "Pchakhhhhhhh" },
-    { src: "photos/F4.jpg", caption: "Toi" }
+    { src: "F.jpg", caption: "PAPAPAPAPAPAPA" },
+    { src: "clip1.mp4", video: "clip1.mp4", caption: "Avec ma cousine" },
+    { src: "F2.jpg", caption: "avec ma cousine" },
+    { src: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=600&q=80", video: "clip2.mp4", audio: "song2.mp3", audioStart: 165, audioEnd: 225, caption: "mode de solitude" },
+    { src: "https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=600&q=80", video: "clip3.mp4", audio: "song.mp3", audioStart: 215, audioEnd: 235, caption: "Ta magie… tu es belle" },
+    { src: "F3.jpg", caption: "Elle a un front tellement grand qu’on pourrait y faire un match !" },
+    { src: "https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=600&q=80", video: "clip4.mp4", caption: "Pchakhhhhhhh" },
+    { src: "F4.jpg", caption: "Toi" }
   ],
- 
+
   // Scène "vœux"
-  wishesTitle: "Joyeux anniversaire, Firdews ♡",
+  wishesTitle: "Joyeux anniversaire, Firdaws ♡",
   wishes: [
     "Je te souhaite du bonheur, de la santé, du succès et de belles bénédictions pour ce nouveau chapitre de ta vie.",
     "Que tous tes rêves deviennent réalité, et que ton cœur soit toujours rempli de joie.",
     "Merci d'être dans ma vie. Reste heureuse, reste en bonne santé, et continue de sourire."
   ],
+
   // Scène finale : mots qui s'écrivent et s'effacent
   finalWords: ["Avec tout mon amour", "Toujours & à jamais"],
   finalLine: "Merci d'être une partie de ma vie. J'espère que ce petit cadeau rendra ton jour encore plus beau.",
   finalSign: "Pour toujours à toi ♡"
 };
 /* ========================================================== */
- 
+
 document.addEventListener("DOMContentLoaded", () => {
   const $ = id => document.getElementById(id);
   const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const sleep = ms => new Promise(r => setTimeout(r, ms));
   let runId = 0; // annule les animations d'écriture quand on change de scène
- 
+
   /* ---------- Pétales & étincelles ---------- */
   const petals = $("petals");
   if (!reduced) {
@@ -75,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
       petals.appendChild(p);
     }
   }
- 
+
   /* ---------- Ballons ---------- */
   const balloons = $("balloons");
   if (!reduced) {
@@ -87,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
       balloons.appendChild(b);
     }
   }
- 
+
   /* ---------- Effets (confettis, feux d'artifice, coeurs, étincelles) ---------- */
   const fx = $("fx"), ctx = fx.getContext("2d");
   let W = 0, H = 0, raf = 0;
@@ -112,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
     raf = parts.length ? requestAnimationFrame(loop) : 0;
   }
   function add(q) { if (reduced) return; parts.push(q); if (!raf) raf = requestAnimationFrame(loop); }
- 
+
   function confetti(x, y, n = 130) {
     for (let i = 0; i < n; i++) {
       const a = rnd(0, Math.PI * 2), sp = rnd(4, 13);
@@ -171,7 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
   addEventListener("pointerdown", e => { if (!e.target.closest(".next,#cake,.memory")) sparkle(e.clientX, e.clientY, 8, 1.4); });
   const centerOf = el => { const r = el.getBoundingClientRect(); return [r.left + r.width / 2, r.top + r.height / 2]; };
   let ambientId = 0; // boucle d'ambiance (coeurs / feux d'artifice) annulée au changement de scène
- 
+
   /* ---------- Musique ---------- */
   const music = $("music"), toggle = $("music-toggle");
   let musicOn = false, musicWanted = true;
@@ -191,7 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
   toggle.addEventListener("click", () => {
     if (musicOn) { musicWanted = false; pauseMusic(); } else { musicWanted = true; playMusic(); }
   });
- 
+
   /* ---------- Navigation ---------- */
   function goTo(n) {
     const cur = document.querySelector(".scene.active");
@@ -225,7 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     goTo(b.dataset.next);
   }));
- 
+
   /* ---------- Machine à écrire ---------- */
   async function typeInto(el, text, speed, id) {
     for (const ch of text) {
@@ -236,7 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     return true;
   }
- 
+
   /* ---------- Compte à rebours ---------- */
   const target = new Date(CONFIG.targetDate).getTime();
   const pad = v => String(v).padStart(2, "0");
@@ -253,7 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   tick(); setInterval(tick, 1000);
- 
+
   /* ---------- Lettre ---------- */
   async function runLetter() {
     const id = runId, box = $("letter"), btn = $("letter-next");
@@ -275,7 +273,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     if (id === runId) { btn.classList.add("show"); hearts(W / 2, H * .75, 12, W * .25); }
   }
- 
+
   /* ---------- Galerie ---------- */
   const gallery = $("gallery");
   gallery.innerHTML = CONFIG.photos.map((p, i) => {
@@ -335,7 +333,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => hearts(W / 2, H * .85, 10, W * .3), 600);
     gallery.querySelectorAll(".memory").forEach(f => { f.classList.remove("in", "zoom"); void f.offsetWidth; f.classList.add("in"); });
   }
- 
+
   /* ---------- Lecteur vidéo ---------- */
   const v = $("video"), player = $("player");
   const fmt = s => isFinite(s) ? Math.floor(s / 60) + ":" + pad(Math.floor(s % 60)) : "0:00";
@@ -368,7 +366,7 @@ document.addEventListener("DOMContentLoaded", () => {
   $("big-play").addEventListener("click", togglePlay);
   v.addEventListener("click", togglePlay);
   $("mute").addEventListener("click", () => { v.muted = !v.muted; $("mute").textContent = v.muted ? "🔇" : "🔊"; });
- 
+
   /* ---------- Vœux ---------- */
   async function runWishes() {
     const id = runId, box = $("wishes"), amb = ambientId;
@@ -383,7 +381,7 @@ document.addEventListener("DOMContentLoaded", () => {
       await sleep(reduced ? 0 : 200);
     }
   }
- 
+
   /* ---------- Final ---------- */
   async function runFinal() {
     const id = runId, w = $("final-words"), amb = ambientId, cake = $("cake");
@@ -406,7 +404,7 @@ document.addEventListener("DOMContentLoaded", () => {
       await sleep(300); i++;
     }
   }
- 
+
   /* ---------- Gâteau : souffler les bougies ---------- */
   function blowCandles() {
     const cake = $("cake");
@@ -420,7 +418,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   $("cake").addEventListener("click", blowCandles);
   $("cake").addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); blowCandles(); } });
- 
+
   /* ---------- Rejouer ---------- */
   $("restart").addEventListener("click", () => {
     runId++; ambientId++;
