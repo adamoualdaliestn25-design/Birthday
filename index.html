@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#110815">
+  <title>Joyeux Anniversaire</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-scene="1">
+  <div class="stars" aria-hidden="true"></div>
+  <div class="glow glow-one" aria-hidden="true"></div>
+  <div class="glow glow-two" aria-hidden="true"></div>
+  <div class="petals" id="petals" aria-hidden="true"></div>
+  <div class="balloons" id="balloons" aria-hidden="true"></div>
+  <canvas id="fx" aria-hidden="true"></canvas>
+
+  <button class="music-toggle" id="music-toggle" aria-label="Musique" title="Musique">♪</button>
+
+  <main class="story">
+
+    <!-- 1. COMPTE À REBOURS -->
+    <section class="scene active" id="scene-1">
+      <div class="card">
+        <p class="eyebrow">✦ Compte à rebours ✦</p>
+        <h1 id="count-title">Son jour spécial<br><em>approche</em></h1>
+        <p class="subtitle" id="count-sub">Chaque seconde nous rapproche d'une journée qui mérite d'être éternelle ♡</p>
+        <div class="countdown">
+          <div class="time-box"><strong id="days">00</strong><span>Jours</span></div>
+          <div class="time-box"><strong id="hours">00</strong><span>Heures</span></div>
+          <div class="time-box"><strong id="minutes">00</strong><span>Minutes</span></div>
+          <div class="time-box"><strong id="seconds">00</strong><span>Secondes</span></div>
+        </div>
+        <button class="primary-button next" data-next="2"><span>♡</span> Ouvrir son cadeau</button>
+      </div>
+    </section>
+
+    <!-- 2. CADEAU -->
+    <section class="scene" id="scene-2">
+      <div class="card gift-card">
+        <p class="eyebrow">✦ Une surprise pour toi ✦</p>
+        <div class="gift-wrap" id="gift" aria-hidden="true">
+          <div class="gift-glow"></div>
+          <div class="gift-lid"><span></span></div>
+          <div class="gift-bow"><i></i><i></i></div>
+          <div class="gift-box"><span class="ribbon"></span></div>
+        </div>
+        <p class="subtitle">J'ai quelque chose pour toi…</p>
+        <button class="primary-button next" id="open-gift" data-next="3">Clique pour ouvrir</button>
+      </div>
+    </section>
+
+    <!-- 3. LETTRE (machine à écrire) -->
+    <section class="scene" id="scene-3">
+      <div class="letter-wrap">
+        <h1 class="script-title">Joyeux Anniversaire</h1>
+        <div class="card letter-card" id="letter-card" title="Clique pour tout afficher">
+          <div class="letter" id="letter"></div>
+        </div>
+        <button class="primary-button next hidden-until-done" id="letter-next" data-next="4">Nos souvenirs</button>
+      </div>
+    </section>
+
+    <!-- 4. GALERIE -->
+    <section class="scene" id="scene-4">
+      <div class="gallery-scene">
+        <div class="gallery" id="gallery"></div>
+        <button class="primary-button next" data-next="5">Regarder la vidéo</button>
+      </div>
+    </section>
+
+    <!-- 5. VIDÉO -->
+    <section class="scene" id="scene-5">
+      <div class="video-scene">
+        <h1 class="script-title">Un moment pour toi</h1>
+        <p class="eyebrow">✦ un message vidéo spécial ✦</p>
+        <div class="player" id="player">
+          <video id="video" playsinline preload="metadata"></video>
+          <div class="player-error" id="video-error"><p>Ajoute ta vidéo dans le dossier <b>media/</b> (voir script.js)</p></div>
+          <button class="big-play" id="big-play" aria-label="Lecture">▶</button>
+          <div class="controls">
+            <button id="pp" aria-label="Lecture / Pause">▶</button>
+            <input type="range" id="seek" min="0" max="1000" value="0" aria-label="Progression">
+            <span id="time">0:00</span>
+            <button id="mute" aria-label="Son">🔊</button>
+          </div>
+        </div>
+        <button class="primary-button next" data-next="6">Vœux d'anniversaire</button>
+      </div>
+    </section>
+
+    <!-- 6. VŒUX -->
+    <section class="scene" id="scene-6">
+      <div class="card wishes-card">
+        <h1 class="script-title small">Vœux d'anniversaire</h1>
+        <div class="wishes" id="wishes"></div>
+        <div class="mini-heart">♡</div>
+        <button class="primary-button next" data-next="7">Voir la suite</button>
+      </div>
+    </section>
+
+    <!-- 7. FINAL -->
+    <section class="scene" id="scene-7">
+      <div class="final">
+        <div class="cake" id="cake" role="button" tabindex="0" aria-label="Souffler les bougies">
+          <div class="candles">
+            <i class="candle"><b class="flame"></b></i>
+            <i class="candle"><b class="flame"></b></i>
+            <i class="candle"><b class="flame"></b></i>
+          </div>
+          <div class="tier t3"></div>
+          <div class="tier t2"></div>
+          <div class="tier t1"></div>
+          <div class="plate"></div>
+        </div>
+        <p class="cake-hint" id="cake-hint">Clique sur le gâteau pour souffler les bougies ✨</p>
+        <h1 class="final-title"><span id="final-words"></span><i class="caret"></i></h1>
+        <p class="final-line" id="final-line"></p>
+        <p class="final-sign" id="final-sign"></p>
+        <button class="primary-button" id="restart">↺ Rejouer depuis le début</button>
+      </div>
+    </section>
+  </main>
+
+  <audio id="music" loop preload="auto"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
